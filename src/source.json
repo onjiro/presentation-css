@@ -3,15 +3,40 @@
     "title": "タイトル",
     "class": "index",
     "source": <<EOS
-#hoge
-  #fuga
+%h2 HTML と CSS の話
+#sub-title
+  .date 2011.10.21
+  .author 第２システム部 永沼 智比呂
 EOS
   },
   {
-    "title": "next",
+    "title": "目次",
     "source": <<EOS
-#guge
-  #fuga
+%ul
+  %li HTMLとCSS
+  %ul
+    %li HTMLとCSS
+    %li DOMツリー
+    %li IDとクラス
+  %li CSSの段組
+  %ul
+    %li display - block と inline
+    %li float
+    %li position
+  %li セレクタ
+  %ul
+    %li セレクタの基本
+    %li 擬似クラス、擬似要素
+  %li CSS3の新要素
+  %ul
+    %li 角丸、変形、アニメーション
+    %li セレクタの拡張
 EOS 
+  },
+  {
+    "title": "HTML と CSS",
+    "source": <<EOS
+hoge
+EOS
   }
 ]
