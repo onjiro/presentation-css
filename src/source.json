@@ -1,42 +1,110 @@
 [
-  {
-    "title": "タイトル",
-    "class": "index",
-    "source": <<EOS
+{ "title": "タイトル", "class": "index", "source": <<EOS
 %h2 HTML と CSS の話
 #sub-title
   .date 2011.10.21
   .author 第２システム部 永沼 智比呂
 EOS
-  },
-  {
-    "title": "目次",
-    "source": <<EOS
-%ul
-  %li HTMLとCSS
-  %ul
-    %li HTMLとCSS
-    %li DOMツリー
-    %li IDとクラス
-  %li CSSの段組
-  %ul
-    %li display - block と inline
-    %li float
-    %li position
-  %li セレクタ
-  %ul
-    %li セレクタの基本
-    %li 擬似クラス、擬似要素
-  %li CSS3の新要素
-  %ul
-    %li 角丸、変形、アニメーション
-    %li セレクタの拡張
+},
+
+{ "title": "目次", "source": <<EOS
+%ol
+  %li 発表概要
+  %li CSS の概要
+  %li block と inline を操る！
+  %li 段組をする！
+  %li 擬似セレクタで一歩上へ
+  %li まとめ
 EOS 
-  },
-  {
-    "title": "HTML と CSS",
-    "source": <<EOS
-hoge
+},
+{ "title": "なぜ CSS？", "source": <<EOS
+%p CSS はいくつかのポイントを抑えると自由にレイアウトできる！
 EOS
-  }
+},
+
+{ "title": "CSS の概要", "class": "eyecatch", "source": "%h2 CSS って何だ？" },
+{ "title": "CSS って何だ？", "source": <<EOS
+%p HTML は文書構造のみ、CSS で見た目を設定。というのが今の流れ。
+%p
+  利点は作業の分離、メディアによって表示方法を変更可能
+  HTML構造がシンプルになるとか？・・・調べる
+EOS
+},
+{ "title": "CSS の基本", "source": <<EOS
+%p CSS セレクタで指定した要素に見た目を設定する
+%p TODO セレクタ、属性、代表的なセレクタ、属性
+EOS
+},
+
+
+{ "title": "ポイント1", "class": "eyecatch", "source": "%h2 block と inline を操る！" },
+{ "title": "block と inline", "source": <<EOS
+%p display 要素を自在に使えるようになろう！
+EOS
+},
+{ "title": "横に並ぶリスト", "source": <<EOS
+%p ブロック要素とインライン要素での代表的なテクニックを紹介
+EOS
+},
+
+
+{ "title": "ポイント2", "class": "eyecatch", "source": "%h2 段組みをする！" },
+{ "title": "CSS で段組み！", "source": <<EOS
+%p 段組みはレイアウトを行う上での必須のテクニック！
+%p 基本の2段組みレイアウトの方法を紹介
+%ul
+  %li flow レイアウト
+  %li position レイアウト
+EOS
+},
+{ "title": "flow レイアウト", "source": <<EOS
+%p flow 属性を使用した段組みのテクニック
+%p flow を指定した後の要素が回り込むことを利用する
+EOS
+},
+{ "title": "position レイアウト", "source": <<EOS
+position 属性を使用した段組みのテクニック
+%p position 属性を指定することで自由に場所を指定することができる。
+%dl
+  %dt relative
+  %dd 指定なし（static）位置を基準に相対配置
+  %dt absolute
+  %dd 絶対位置への配置
+  %dt fixed
+  %dd 絶対位置への配置（スクロールを無視する）
+%p
+EOS
+},
+
+
+{ "title": "ポイント3", "class": "eyecatch", "source": "%h2 擬似セレクタで一歩上へ！" },
+{ "title": "擬似セレクタを使う！", "source": <<EOS
+%p 複雑なことをするときには擬似セレクタが欠かせない！
+%p 擬似セレクタを使った代表的なテクニックを紹介
+EOS
+},
+{ "title": "hover", "source": <<EOS
+%p カーソルを要素に重ねた時の見た目を指定
+EOS
+},
+{ "title": "*Child", "source": <<EOS
+%p firstChild, n-thChild などで任意の順序の要素を指定
+EOS
+},
+{ "title": "before, after", "source": <<EOS
+%p before, after で要素にコンテンツを追加する
+EOS
+},
+
+
+{ "title": "まとめ", "class": "eyecatch", "source": "%h2 まとめ" },
+{ "title": "まとめ", "class":"last" ,"source": <<EOS
+%p CSS は以下を押さえると大分自由になる！
+%ul
+  %li display 属性
+  %li flow 属性
+  %li position 属性
+  %li 擬似セレクタ
+EOS
+}
 ]

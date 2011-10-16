@@ -13,18 +13,19 @@ new function(sourcePath, port){
     app.use(express.static(root));
     
     app.get('/', function(req, res) {
-	res.redirect('/index');
+	res.redirect('/index.html');
     });
 
-    app.get('/:number', function(req, res) {
+    app.get('/:number.html', function(req, res) {
 	var number = (req.params.number === "index") ? 0: parseInt(req.params.number);
 	// 利便性のためアクセスの度にファイルをロード
 	var source = here.parse(fs.readFileSync(sourcePath).toString());
 	console.log(source);
 	var pages = JSON.parse(source);
-	var previousPage = "/" + ((number !== 0) ? (number - 1) : pages.length - 1);
-	var nextPage = "/" + ((number !== pages.length - 1) ? (number + 1): 0);
+	var previousPage = "/" + ((number !== 0) ? (number - 1) : pages.length - 1) + ".html";
+	var nextPage = "/" + ((number !== pages.length - 1) ? (number + 1): 0) + ".html";
 	var page = pages[number];
+	console.log(page);
 	res.render("layout", {
 	    'layout': false,
 	    'body': haml.render(page.source),
