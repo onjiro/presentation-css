@@ -1,0 +1,31 @@
+!!! 5
+%html
+  %head
+    %meta{"http-equiv":"content-language", "content":"ja"}
+    %meta{"charset":"utf-8"}
+    %title HTML & CSS の話 - 2011.10.21
+    %link{"rel":"stylesheet", "href":"css/all.css"}
+    %script{"charset":"utf-8", "src":"js/jquery.js"}
+    %script{"charset":"utf-8", "src":"js/jquery.pageswitch.js"}
+  %body{"class": title}
+    #page
+      %header
+        %h1!= title
+      #content!= body
+      #previous
+        %a{"href": previous}
+          back
+      #next
+        %a{"href": next}
+          continue
+      %footer
+        %a{href: "/"}
+          top
+    :javascript
+      $(function() {
+        $('body').css('marginRight', -$('body').width() * 2).animate({marginRight: '10px'}, 300);
+        $('a').pageswitch({
+          properties: { marginLeft: -$('body').width() * 2 }, 
+          options: { duration: 300 }
+        });
+      });

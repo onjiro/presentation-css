@@ -1,0 +1,122 @@
+@charset "utf-8";
+body, p, h1, h2, h3, h4, h5, h6 {
+    padding: 0;
+    margin: 0;
+}
+body {
+    background-color: #aaa;
+    font-size: 24px;
+}
+#page {
+    position: relative;
+    display: block;
+    background-color: #fff;
+    margin: 0 auto;
+    width: 640px;
+    height: 480px;
+    box-shadow: 8px 8px 5px #666;
+}
+header, footer {
+    width: 100%;
+    background-color: rgba(0, 160, 200, 0.7);
+}
+header {
+    height: 48px;
+}
+h1 {
+    font-size: 36px;
+    margin: 0;
+    padding: 4px 16px;
+    text-shadow: 4px 4px 4px #069;
+}
+footer {
+    position: absolute;
+    bottom: 0px;
+    height: 28px;
+}
+#content{
+}
+
+/* 前のページ */
+#previous {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 80px;
+    height: 480px;
+}
+#previous a {
+    display: block;
+    width: 80px;
+    height: 480px;
+    text-indent: 9999px;
+}
+#previous a:hover {
+    display: block;
+    background-color: rgba(216, 216, 216, 0.7);
+    transition: background-color 0.2s linear;
+    -moz-transition: background-color 0.2s linear;
+    -webkit-transition: background-color 0.2s linear;
+}
+#previous a:after {
+    position: fixed;
+    margin-top: 160px;
+    margin-left: 16px;
+    display: block;    
+    content: "";
+}
+#previous a:hover:after {
+    border-top: solid 36px transparent;
+    border-bottom: solid 36px transparent;
+    border-right: solid 36px rgba(0, 200, 200, 0.4);
+}
+
+/* 次のページ */
+#next {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 80px;
+    height: 480px;
+}
+#next a {
+    display: block;
+    width: 80px;
+    height: 480px;
+    text-indent: 9999px;
+}
+#next a:hover {
+    display: block;
+    background-color: rgba(216, 216, 216, 0.7);
+    transition: background-color 0.2s linear;
+    -moz-transition: background-color 0.2s linear;
+    -webkit-transition: background-color 0.2s linear;
+}
+#next a:after {
+    position: fixed;
+    margin-top: 160px;
+    margin-left: 16px;
+    display: block;    
+    content: "";
+}
+#next a:hover:after {
+    border-top: solid 36px transparent;
+    border-bottom: solid 36px transparent;
+    border-left: solid 36px rgba(0, 200, 200, 0.4);
+}
+
+/* index ページ */
+.index header, .index footer {
+    display: none;
+}
+.index h2 {
+    padding-top: 96px;
+    font-size: 48px;
+    padding-left: 32px;
+}
+.index #sub-title {
+    margin-top: 160px;
+    padding-left: 32px;
+    font-size: 18px;
+    line-height: 1.5;
+}
