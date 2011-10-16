@@ -1,5 +1,8 @@
-new function(port){
+new function(sourcePath, port){
     var express = require('express'),
+    haml = require('hamljs'),
+    fs = require('fs'),
+    here = require('./heredoc'),
     join = require('path').join;
     
     var app = express.createServer();
@@ -10,35 +13,25 @@ new function(port){
     app.use(express.static(root));
     
     app.get('/', function(req, res) {
-	res.redirect('/index.html');
+	res.redirect('/index');
     });
 
-    // TODO any level to redirect index
-    var pages = [
-	"index",
-	"目次",
-	"HTMLとCSS",
-	"CSSでの段組み",
-	"セレクタ",
-	"CSS3での新要素",
-	"おまけ",
-    ];
-    app.get('/:page.html', function(req, res) {
-	var previousPage = "/";
-	var nextPage = "/";
-	for (var i = 0; i < pages.length; i++) {
-	    if (req.params.page.toString() === pages[i]) {
-		previousPage = (i > 0) ? pages[i - 1] + ".html": "/";
-		nextPage = (i < pages.length - 1) ? pages[i + 1] + ".html": "/";
-		break;
-	    }
-	}
-	res.render(req.params.page, {
-	    'title': req.params.page,
+    app.get('/:number', function(req, res) {
+	var number = (req.params.number === "index") ? 0: parseInt(req.params.number);
+	// 利便性のためアクセスの度にファイルをロード
+	var pages = JSON.parse(here.parse(fs.readFileSync(sourcePath).toString()));
+	var previousPage = "/" + ((number !== 0) ? (number - 1) : pages.length - 1);
+	var nextPage = "/" + ((number !== pages.length - 1) ? (number + 1): 0);
+	var page = pages[number];
+	res.render("layout", {
+	    'layout': false,
+	    'body': haml.render(page.source),
+	    'title': page.title || "",
+	    'class': page.class || "",
 	    'previous': previousPage,
 	    'next': nextPage,
 	});
     });
     app.listen(port);
     console.log("server start listening on port " + port);
-}(4000);
+}('./src/source.json', 4000);

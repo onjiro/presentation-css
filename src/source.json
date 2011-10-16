@@ -1,0 +1,17 @@
+[
+  {
+    "title": "タイトル",
+    "class": "index",
+    "source": <<EOS
+#hoge
+  #fuga
+EOS
+  },
+  {
+    "title": "next",
+    "source": <<EOS
+#guge
+  #fuga
+EOS 
+  }
+]
