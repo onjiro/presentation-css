@@ -98,6 +98,13 @@ footer a.top:active {
     border-bottom: solid 36px transparent;
     border-right: solid 36px rgba(0, 200, 200, 0.7);
 }
+#previous a:active:after {
+    margin-top: 172px;
+    margin-left: 28px;
+    border-top: solid 24px transparent;
+    border-bottom: solid 24px transparent;
+    border-right: solid 24px rgba(0, 240, 160, 0.7);
+}
 
 /* 次のページ */
 #next {
@@ -131,6 +138,12 @@ footer a.top:active {
     border-top: solid 36px transparent;
     border-bottom: solid 36px transparent;
     border-left: solid 36px rgba(0, 200, 200, 0.7);
+}
+#next a:active:after {
+    margin-top: 172px;
+    border-top: solid 24px transparent;
+    border-bottom: solid 24px transparent;
+    border-left: solid 24px rgba(0, 240, 160, 0.7);
 }
 
 /* index ページ */
