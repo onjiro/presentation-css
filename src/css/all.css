@@ -59,7 +59,7 @@ footer {
     -webkit-transition: background-color 0.2s linear;
 }
 #previous a:after {
-    position: fixed;
+    position: absolute;
     margin-top: 160px;
     margin-left: 16px;
     display: block;    
@@ -93,7 +93,7 @@ footer {
     -webkit-transition: background-color 0.2s linear;
 }
 #next a:after {
-    position: fixed;
+    position: absolute;
     margin-top: 160px;
     margin-left: 16px;
     display: block;    
