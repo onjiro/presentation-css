@@ -57,14 +57,13 @@ EOS
   %li position レイアウト
 EOS
 },
-{ "title": "flow レイアウト", "source": <<EOS
+{ "title": "float を使う方法", "source": <<EOS
 %p flow 属性を使用した段組みのテクニック
 %p flow を指定した後の要素が回り込むことを利用する
 EOS
 },
-{ "title": "position レイアウト", "source": <<EOS
-position 属性を使用した段組みのテクニック
-%p position 属性を指定することで自由に場所を指定することができる。
+{ "title": "position を使う方法", "source": <<EOS
+%p position 属性を使用した段組みのテクニック
 %dl
   %dt relative
   %dd 指定なし（static）位置を基準に相対配置
@@ -73,6 +72,41 @@ position 属性を使用した段組みのテクニック
   %dt fixed
   %dd 絶対位置への配置（スクロールを無視する）
 %p
+.example{style:'position: relative'}
+  親要素 - position: relative
+  .div{style:'width: 60%; margin-top: 1em; padding-bottom: 3em;'}
+    position: static - 右側の要素と重ならないように幅を調整
+  .div{style:'width: 30%; margin-top: 1em; position: absolute; top: 1.5em; right: 0.5em;'}
+    position: absolute - top, right を指定
+EOS
+},
+{ "title": "通常(static)の場合の配置", "source": <<EOS
+%p
+  static が指定された block 要素は次の挙動
+  %ul
+    %li 開始位置 + margin の位置に配置
+    %li 大きさは border + padding + width(height)
+    %li 子要素は 配置位置 + border + padding から開始
+.example
+  子要素の開始位置から margin 分離れた箇所に border が配置される。
+  %div{style:'width: 90%; margin: 1em; padding-bottom: 3em;'}
+    padding した位置に子要素が配置される
+EOS
+},
+{ "title": "relative, absolute の場合の配置", "source": <<EOS
+%p
+  margin, padding に加えて、top などの指定が可能
+  %dl
+    %dt relative
+    %dd 相対配置。static の場合基準位置からの位置を指定
+    %dt absolute
+    %dd 絶対配置。親ボックスが static の場合、ウインドウの左上からの位置で指定。static 以外では親ボックスの最初の子要素の開始位置で指定
+.example
+  親ボックス - position: static
+  %div{style:'position: relative; top: 30px; padding-bottom: 4em;'}
+    relative: padding を加味した位置に子要素が配置される
+  %div{style:'position: absolute; bottom: 40px; right: 50px; padding-bottom: 3em;'}
+    absolute: 開始位置をウインドウの左上として配置
 EOS
 },
 
