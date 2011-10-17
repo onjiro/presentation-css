@@ -33,6 +33,33 @@ footer {
     position: absolute;
     bottom: 0px;
     height: 28px;
+    padding-left: 16px;
+    text-transform: uppercase;
+}
+footer a.top {
+    margin-top: 5px;
+    width: 4em;
+    height: 1.0em;
+    padding: 0.25em 0;
+    color: #005;
+    font-size: 12px;
+    text-align: center;
+    display: block;
+    border: 1px solid rgba(0, 80, 120, 0.8);
+    border-radius: 1em;
+    text-decoration: none;
+    box-shadow: 1px 1px 0 rgba(0, 80, 120, 0.8);
+}
+footer a.top:hover {
+    color: #00f;
+    background-color: rgba(255, 255, 255, 0.2);
+}
+footer a.top:active {
+    margin-top: 6px;
+    margin-left: 1px;
+    color: #000;
+    background-color: rgba(0, 0, 0, 0.2);
+    box-shadow: 0 0 0 #000;
 }
 #content{
     padding: 32px 16px;
