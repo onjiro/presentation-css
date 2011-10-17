@@ -120,3 +120,17 @@ footer {
     font-size: 18px;
     line-height: 1.5;
 }
+
+/* eyecatch */
+.eyecatch header, .eyecatch footer {
+    display: none;
+}
+.eyecatch #page {
+    background-color: #000;
+}
+.eyecatch h2 {
+    color: #f00;
+    font-size: 64px;
+    text-align: center;
+    padding-top: 30%;
+}
