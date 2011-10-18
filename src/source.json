@@ -53,31 +53,40 @@ EOS
 %p 段組みはレイアウトを行う上での必須のテクニック！
 %p 基本の2段組みレイアウトの方法を紹介
 %ul
-  %li flow レイアウト
-  %li position レイアウト
+  %li float を使う方法
+  %li position を使う方法
 EOS
 },
 { "title": "float を使う方法", "source": <<EOS
-%p flow 属性を使用した段組みのテクニック
-%p flow を指定した後の要素が回り込むことを利用する
+%p float ブロックの後の要素が右 or 左に回り込むことを利用
+.example
+  %p{style:'margin-bottom: 8px;'}
+    親要素
+  .nav{style:'position: relative;float: left; width: 40%; background-color: #ffa; padding-bottom: 5em; margin-bottom: 8px;'}
+    先の要素で float を指定
+    %br
+    'float: left'
+  .main{style:'position: relative; margin-left: 45%; width: 50%; padding-bottom: 3em; margin-bottom: 8px'}
+    後の要素は float を指定しない
+    %br
+    重ならない様に幅を指定
+  .clear{style:'clear:both; background-color: #faf'}
+    clear 属性を指定して float 解除
 EOS
 },
 { "title": "position を使う方法", "source": <<EOS
 %p position 属性を使用した段組みのテクニック
-%dl
-  %dt relative
-  %dd 指定なし（static）位置を基準に相対配置
-  %dt absolute
-  %dd 絶対位置への配置
-  %dt fixed
-  %dd 絶対位置への配置（スクロールを無視する）
 %p
 .example{style:'position: relative'}
   親要素 - position: relative
   .div{style:'width: 60%; margin-top: 1em; padding-bottom: 3em;'}
-    position: static - 右側の要素と重ならないように幅を調整
-  .div{style:'width: 30%; margin-top: 1em; position: absolute; top: 1.5em; right: 0.5em;'}
-    position: absolute - top, right を指定
+    position: static
+    %br
+    右側の要素と重ならないように幅を指定
+  .div{style:'width: 30%; margin-top: 1em; position: absolute; top: 1.5em; right: 0.5em; background-color: #ffa;'}
+    position: absolute
+    %br
+    top, right を指定
 EOS
 },
 { "title": "通常(static)の場合の配置", "source": <<EOS
@@ -109,8 +118,9 @@ EOS
     absolute: 開始位置をウインドウの左上として配置
 EOS
 },
-{ "title": "+1!", "class": "supplement", "source": <<EOS
+{ "title": "one more!!", "class": "supplement", "source": <<EOS
 %h2 ネガティブマージン
+%p margin にマイナスの値を設定するテクニック
 %blockquote
   %p
     %a{href:'http://coliss.com/articles/build-websites/operation/css/css-using-negative-margins.html', target:'_blank'}
