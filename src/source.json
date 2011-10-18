@@ -109,6 +109,14 @@ EOS
     absolute: 開始位置をウインドウの左上として配置
 EOS
 },
+{ "title": "+1!", "class": "supplement", "source": <<EOS
+%h2 ネガティブマージン
+%blockquote
+  %p
+    %a{href:'http://coliss.com/articles/build-websites/operation/css/css-using-negative-margins.html'}
+      [CSS]ネガティブマージンの理解を深め、活用するテクニック集 - コリス
+EOS
+},
 
 
 { "title": "ポイント3", "class": "eyecatch", "source": "%h2 擬似セレクタで一歩上へ！" },
