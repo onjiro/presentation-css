@@ -13,12 +13,10 @@
         %h1!= title
       #content!= body
       #navigation
-        #previous
-          %a{"href": previous}
-            previous
-        #next
-          %a{"href": next}
-            next
+        %a#previous{"href": previous}
+          previous
+        %a#next{"href": next}
+          next
       %footer
         %a{href: "/", class: "top"}
           top
