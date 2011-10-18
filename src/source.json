@@ -113,7 +113,7 @@ EOS
 %h2 ネガティブマージン
 %blockquote
   %p
-    %a{href:'http://coliss.com/articles/build-websites/operation/css/css-using-negative-margins.html'}
+    %a{href:'http://coliss.com/articles/build-websites/operation/css/css-using-negative-margins.html', target:'_blank'}
       [CSS]ネガティブマージンの理解を深め、活用するテクニック集 - コリス
 EOS
 },

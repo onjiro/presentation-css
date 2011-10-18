@@ -12,19 +12,20 @@
       %header
         %h1!= title
       #content!= body
-      #previous
-        %a{"href": previous}
-          back
-      #next
-        %a{"href": next}
-          continue
+      #navigation
+        #previous
+          %a{"href": previous}
+            previous
+        #next
+          %a{"href": next}
+            next
       %footer
         %a{href: "/", class: "top"}
           top
     :javascript
       $(function() {
         $('body').css('marginRight', -$('body').width() * 2).animate({marginRight: '10px'}, 300);
-        $('a').pageswitch({
+        $('#navigation a').pageswitch({
           properties: { marginLeft: -$('body').width() * 2 }, 
           options: { duration: 300 }
         });
