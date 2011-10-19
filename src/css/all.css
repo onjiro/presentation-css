@@ -140,7 +140,7 @@ footer a.top:active {
 .eyecatch header, .eyecatch footer {
     display: none;
 }
-.eyecatch #page {
+.eyecatch {
     background-color: #000;
 }
 .eyecatch h2 {

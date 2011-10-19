@@ -24,12 +24,13 @@ new function(sourcePath, port){
 	
 	var allsources = "";
 	for (var i = 0; i < sources.length; i++) {
-	    var previousPage = "/" + ((i !== 0) ? (i - 1) : sources.length - 1) + ".html";
-	    var nextPage = "/" + ((i !== sources.length - 1) ? (i + 1): 0) + ".html";
+	    var previousPage = "#" + ((i !== 0) ? (i - 1) : sources.length - 1);
+	    var nextPage = "#" + ((i !== sources.length - 1) ? (i + 1): 0);
 	    var page = sources[i];
 	    console.log(page);
 
 	    allsources += pager({
+		index: i.toString(),
 		title: page.title || "",
 		class: page.class || "",
 		body: haml.render(page.source),
