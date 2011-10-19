@@ -6,7 +6,7 @@ exports.parse = function(src) {
     while (matcher = pattern.exec(tmp)) {
 	tmp = tmp.replace(
 	    tmp.substring(matcher.index, matcher.index + matcher[0].length),
-	    '"' + matcher[1].replace(/\n/g, "\\n") + '"');
+	    '"' + matcher[1].replace(/\n/g, "\\n").replace(/\"/g, "\\\"") + '"');
     }
     return tmp;
 };
