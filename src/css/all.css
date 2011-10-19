@@ -73,13 +73,13 @@ footer a.top:active {
     text-indent: 9999px;
     width: 15%;
     height: 100%;
-    z-index: 10;
 }
 #navigation a:hover {
     background-color: rgba(216, 216, 216, 0.4);
     transition: background-color 0.2s linear;
     -moz-transition: background-color 0.2s linear;
     -webkit-transition: background-color 0.2s linear;
+    z-index: 10;
 }
 #navigation a:hover:after {
     display: block;    
