@@ -58,7 +58,7 @@ EOS
 EOS
 },
 { "title": "float を使う方法", "source": <<EOS
-%p float ブロックの後の要素が右 or 左に回り込むことを利用
+%p float を指定した場合の配置を利用
 .example
   %p{style:'margin-bottom: 8px;'}
     親要素
@@ -125,6 +125,12 @@ EOS
   %p
     %a{href:'http://coliss.com/articles/build-websites/operation/css/css-using-negative-margins.html', target:'_blank'}
       [CSS]ネガティブマージンの理解を深め、活用するテクニック集 - コリス
+%h2 display: table-cell
+%p テーブル的な配置を可能にする
+%blockquote
+  %p
+    %a{href:'http://ib-ennoshita.jp/2008/04/24-ogawa.html', target:'_blank'}
+      CSS「display: table」と「display: table-cell」で出来ること - ibnet BLOG
 EOS
 },
 
