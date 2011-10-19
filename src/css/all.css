@@ -7,7 +7,7 @@ body {
     background-color: #aaa;
     font-size: 24px;
 }
-#page {
+.page {
     position: relative;
     display: block;
     background-color: #fff;
@@ -61,12 +61,12 @@ footer a.top:active {
     background-color: rgba(0, 0, 0, 0.2);
     box-shadow: 0 0 0 #000;
 }
-#content{
+.content{
     padding: 32px 16px;
 }
 
 /* ナビゲーション */
-#navigation a {
+.navigation a {
     display: block;
     position: absolute;
     top: 0;
@@ -74,46 +74,46 @@ footer a.top:active {
     width: 15%;
     height: 100%;
 }
-#navigation a:hover {
+.navigation a:hover {
     background-color: rgba(216, 216, 216, 0.4);
     transition: background-color 0.2s linear;
     -moz-transition: background-color 0.2s linear;
     -webkit-transition: background-color 0.2s linear;
     z-index: 10;
 }
-#navigation a:hover:after {
+.navigation a:hover:after {
     display: block;    
     content: "";
     position: absolute;
     top: 50%;
 }
 
-#previous {
+.previous {
     left: 0;
 }
-#previous:hover:after {
+.previous:hover:after {
     left: 0;
     margin-top: -36px;
     border: solid 36px transparent;
     border-right: solid 36px rgba(0, 200, 200, 0.7);
 }
-#previous:active:after {
+.previous:active:after {
     margin-top: -24px;
     margin-left: 12px;
     border: solid 24px transparent;
     border-right: solid 24px rgba(0, 240, 160, 0.7);
 }
 
-#next {
+.next {
     right: 0;
 }
-#next:hover:after {
+.next:hover:after {
     right: 0;
     margin-top: -36px;
     border: solid 36px transparent;
     border-left: solid 36px rgba(0, 200, 200, 0.7);
 }
-#next:active:after {
+.next:active:after {
     margin-top: -24px;
     margin-right: 12px;
     border: solid 24px transparent;

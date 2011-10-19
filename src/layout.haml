@@ -7,17 +7,7 @@
     %link{"rel":"stylesheet", "href":"css/all.css"}
     %script{"charset":"utf-8", "src":"js/jquery.js"}
     %script{"charset":"utf-8", "src":"js/jquery.pageswitch.js"}
-  %body{"class": class}
-    #page
-      %header
-        %h1!= title
-      #content!= body
-      #navigation
-        %a#previous{"href": previous} previous
-        %a#next{"href": next} next
-      %footer
-        %a{href: "/", class: "top"}
-          top
+  %body!= pages
     :javascript
       $(function() {
         $('body').css('marginRight', -$('body').width() * 2).animate({marginRight: '10px'}, 300);

@@ -16,23 +16,30 @@ new function(sourcePath, port){
 	res.redirect('/index.html');
     });
 
-    app.get('/:number.html', function(req, res) {
-	var number = (req.params.number === "index") ? 0: parseInt(req.params.number);
-	// 利便性のためアクセスの度にファイルをロード
+    app.get('/index.html', function(req, res) {
 	var source = here.parse(fs.readFileSync(sourcePath).toString());
 	console.log(source);
-	var pages = JSON.parse(source);
-	var previousPage = "/" + ((number !== 0) ? (number - 1) : pages.length - 1) + ".html";
-	var nextPage = "/" + ((number !== pages.length - 1) ? (number + 1): 0) + ".html";
-	var page = pages[number];
-	console.log(page);
+	var sources = JSON.parse(source);
+	var pager = haml.compile(fs.readFileSync("src/page.haml").toString());
+	
+	var allsources = "";
+	for (var i = 0; i < sources.length; i++) {
+	    var previousPage = "/" + ((i !== 0) ? (i - 1) : sources.length - 1) + ".html";
+	    var nextPage = "/" + ((i !== sources.length - 1) ? (i + 1): 0) + ".html";
+	    var page = sources[i];
+	    console.log(page);
+
+	    allsources += pager({
+		title: page.title || "",
+		class: page.class || "",
+		body: haml.render(page.source),
+		previous: previousPage,
+		next: nextPage
+	    });
+	}
 	res.render("layout", {
 	    'layout': false,
-	    'body': haml.render(page.source),
-	    'title': page.title || "",
-	    'class': page.class || "",
-	    'previous': previousPage,
-	    'next': nextPage,
+	    'pages': allsources,
 	});
     });
     app.listen(port);

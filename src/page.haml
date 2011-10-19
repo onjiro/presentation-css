@@ -1,0 +1,10 @@
+.page{"class": class}
+  %header
+    %h1!= title
+  .content!= body
+  .navigation
+    %a.previous{"href": previous} previous
+    %a.next{"href": next} next
+  %footer
+    %a{href: "/", class: "top"}
+      top
