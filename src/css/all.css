@@ -168,3 +168,17 @@ footer a.top:active {
     padding: 0.5em;
     z-index: 2;
 }
+
+.example li.inline {
+    display: inline;
+    list-style-type: none;
+}
+
+.example li.inlineblock {
+    display: inline-block;
+    list-style-type: none;
+    padding: 1em 0.5em;
+    border: 1px solid #333;
+    border-radius: 8px;
+    background-color: #ffa;
+}

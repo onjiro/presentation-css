@@ -39,11 +39,52 @@ EOS
 
 { "title": "ポイント1", "class": "eyecatch", "source": "%h2 block と inline を操る！" },
 { "title": "block と inline", "source": <<EOS
-%p display 要素を自在に使えるようになろう！
+%p HTML にはブロック要素とインライン要素がある
+%p タグ毎に決まっているが、display 属性で上書き可能
+%dl
+  %dt ブロック要素
+  %dd 要素は上から下方向に配置される
+  %dt インライン要素
+  %dd 前後の要素は改行されない場合、左から右に配置される
+%p ただし、インライン要素では width, height, 縦方向の margin, padding 属性は適用されない
 EOS
 },
+{ "title": "実例！", "class":"eyecatch", "source": "%h2 どういうこと？"},
 { "title": "横に並ぶリスト", "source": <<EOS
-%p ブロック要素とインライン要素での代表的なテクニックを紹介
+%p ブロック要素とインライン要素での代表的なテクニック
+.example
+  li { display: block;} （デフォルト）
+  %ul
+    %li HOME
+    %li BLOG
+    %li LINK
+.example
+  li { display: inline; list-style-type: none;}
+  %ul
+    %li{style:"display: inline; list-style-type: none;"} HOME
+    %li{style:"display: inline; list-style-type: none;"} BLOG
+    %li{style:"display: inline; list-style-type: none;"} LINK
+EOS
+},
+{ "title": "one more!!", "class": "supplement", "source": <<EOS
+%h2 inline-block
+%p 下記の属性が有効なインライン要素
+%ul
+  %li width
+  %li height
+  %li 縦方向の margin
+  %li 縦方向の padding
+.example
+  li { display: inline-block; list-style-type: none;}
+  %ul
+    %li.inlineblock HOME
+    %li.inlineblock BLOG
+    %li.inlineblock LINK
+%blockquote
+  %p 
+    %a{href:'http://h2ham.seesaa.net/article/116990578.html', target:'_blank'}
+      display:inline-blockがけっこう便利。だけど…
+      %span.sitename THE HAM MEDIA BLOG
 EOS
 },
 
@@ -124,13 +165,15 @@ EOS
 %blockquote
   %p
     %a{href:'http://coliss.com/articles/build-websites/operation/css/css-using-negative-margins.html', target:'_blank'}
-      [CSS]ネガティブマージンの理解を深め、活用するテクニック集 - コリス
+      [CSS]ネガティブマージンの理解を深め、活用するテクニック集
+      %span.sitename コリス
 %h2 display: table-cell
 %p テーブル的な配置を可能にする
 %blockquote
   %p
     %a{href:'http://ib-ennoshita.jp/2008/04/24-ogawa.html', target:'_blank'}
-      CSS「display: table」と「display: table-cell」で出来ること - ibnet BLOG
+      CSS「display: table」と「display: table-cell」で出来ること
+      %span.sitename ibnet BLOG
 EOS
 },
 
