@@ -70,7 +70,7 @@ footer a.top:active {
     display: block;
     position: absolute;
     top: 0;
-    text-indent: 9999px;
+    text-indent: -9999px;
     width: 15%;
     height: 100%;
 }
