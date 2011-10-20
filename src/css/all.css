@@ -19,17 +19,18 @@ body {
 }
 header, footer {
     width: 100%;
-    background-color: rgba(0, 160, 200, 0.7);
+    background-color: rgba(255, 160, 0, 0.7);
 }
 header {
     padding-top: 8px;
     height: 10%;
 }
 h1 {
+    color: #fff;
     font-size: 36px;
     margin: 0;
     padding: 4px 16px;
-    text-shadow: 4px 4px 4px #069;
+    text-shadow: 4px 4px 4px #b60;
 }
 footer {
     position: absolute;
@@ -58,7 +59,7 @@ footer a.top:hover {
 }
 footer a.top:active {
     margin-top: 6px;
-    margin-left: 1px;
+    margin-left: 17px;
     color: #000;
     background-color: rgba(0, 0, 0, 0.2);
     box-shadow: 0 0 0 #000;
@@ -126,16 +127,34 @@ footer a.top:active {
 .index header, .index footer {
     display: none;
 }
+.index:before, .index:after {
+    display: block;
+    position: absolute;
+    content: "";
+    width: 100%;
+    background-color: rgba(255, 160, 0, 0.7);
+}
+.index:before {
+    height: 80px;
+}
+.index:after {
+    bottom: 0;
+    height: 40px;
+}
 .index h2 {
-    padding-top: 96px;
+    position: relative;
+    margin-top: 96px;
     font-size: 64px;
-    padding-left: 32px;
+    margin-left: 32px;
+    z-index: 2;
+    border-bottom: 16px solid rgba(255, 160, 0, 0.7);
 }
 .index #sub-title {
     margin-top: 160px;
     padding-left: 32px;
     font-size: 24px;
     line-height: 1.5;
+    z-index: 2;
 }
 
 /* eyecatch */
