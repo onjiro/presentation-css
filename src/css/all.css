@@ -11,7 +11,7 @@ body {
     position: relative;
     display: block;
     background-color: #fff;
-    margin: 0 auto;
+    margin: 0 auto 40px auto;
     width: 800px;
     height: 600px;
     box-shadow: 8px 8px 5px #666;
@@ -143,11 +143,17 @@ footer a.top:active {
 .eyecatch {
     background-color: #000;
 }
-.eyecatch h2 {
-    color: #f00;
-    font-size: 64px;
+.eyecatch .content {
+    position: absolute;
+    padding: 0;
     text-align: center;
-    padding-top: 30%;
+    color: #f00;
+    top: 50%;
+    width: 100%;
+}
+.eyecatch h2 {
+    font-size: 64px;
+    margin-top: -1em;
 }
 
 /* example */
