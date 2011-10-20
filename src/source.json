@@ -13,7 +13,6 @@ EOS
   %li CSS の概要
   %li block と inline を操る！
   %li 段組をする！
-  %li 擬似セレクタで一歩上へ
   %li まとめ
 EOS 
 },
@@ -178,34 +177,14 @@ EOS
 },
 
 
-{ "title": "ポイント3", "class": "eyecatch", "source": "%h2 擬似セレクタで一歩上へ！" },
-{ "title": "擬似セレクタを使う！", "source": <<EOS
-%p 複雑なことをするときには擬似セレクタが欠かせない！
-%p 擬似セレクタを使った代表的なテクニックを紹介
-EOS
-},
-{ "title": "hover", "source": <<EOS
-%p カーソルを要素に重ねた時の見た目を指定
-EOS
-},
-{ "title": "*Child", "source": <<EOS
-%p firstChild, n-thChild などで任意の順序の要素を指定
-EOS
-},
-{ "title": "before, after", "source": <<EOS
-%p before, after で要素にコンテンツを追加する
-EOS
-},
-
-
 { "title": "まとめ", "class": "eyecatch", "source": "%h2 まとめ" },
 { "title": "まとめ", "class":"last" ,"source": <<EOS
-%p CSS は以下を押さえると大分自由になる！
+%p CSS はまず以下を押さえるといいかも！
 %ul
   %li display 属性
-  %li flow 属性
+  %li float 属性
   %li position 属性
-  %li 擬似セレクタ
+%p あとは擬似セレクタも使えるとかなり色々できるヨ！
 EOS
 }
 ]
