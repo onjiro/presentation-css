@@ -5,7 +5,7 @@ body, p, h1, h2, h3, h4, h5, h6 {
 }
 body {
     background-color: #aaa;
-    font-size: 24px;
+    font-size: 28px;
 }
 .page {
     position: relative;
@@ -21,7 +21,8 @@ header, footer {
     background-color: rgba(0, 160, 200, 0.7);
 }
 header {
-    height: 48px;
+    padding-top: 8px;
+    height: 10%;
 }
 h1 {
     font-size: 36px;
@@ -33,11 +34,11 @@ footer {
     position: absolute;
     bottom: 0px;
     height: 28px;
-    padding-left: 16px;
     text-transform: uppercase;
 }
 footer a.top {
     margin-top: 5px;
+    margin-left: 16px;
     width: 4em;
     height: 1.0em;
     padding: 0.25em 0;
@@ -126,13 +127,13 @@ footer a.top:active {
 }
 .index h2 {
     padding-top: 96px;
-    font-size: 48px;
+    font-size: 64px;
     padding-left: 32px;
 }
 .index #sub-title {
     margin-top: 160px;
     padding-left: 32px;
-    font-size: 18px;
+    font-size: 24px;
     line-height: 1.5;
 }
 
@@ -187,4 +188,16 @@ footer a.top:active {
     border: 1px solid #333;
     border-radius: 8px;
     background-color: #ffa;
+}
+
+/* etc */
+blockquote p {
+    border: 2px solid #333;
+    font-size: 24px;
+    padding: 0.5em 1em;
+}
+span.sitename {
+    display: block;
+    width: 100%;
+    text-align: right;
 }
