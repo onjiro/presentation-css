@@ -9,29 +9,47 @@ EOS
 
 { "title": "目次", "source": <<EOS
 %ol
-  %li 発表概要
+  %li なぜ CSS の話？
   %li CSS の概要
   %li block と inline を操る！
   %li 段組をする！
   %li まとめ
 EOS 
 },
-{ "title": "なぜ CSS？", "source": <<EOS
-%p CSS はいくつかのポイントを抑えると自由にレイアウトできる！
+{ "title": "なぜ CSS の話？", "source": <<EOS
+%p CSS は・・・
+%ul
+  %li WEB 系の開発では必須の技術！
+  %li ポイントを抑えると自由にレイアウトできる！
+  %li ちょっとテクニック使えるとカッコイイ！
 EOS
 },
+{ "title": "うへへ", "class":"eyecatch", "source": "%h2 CSS いいよー"},
+{ "title": "but", "class":"eyecatch", "source": "%h2 だけど"},
 
 { "title": "CSS の概要", "class": "eyecatch", "source": "%h2 CSS って何だ？" },
 { "title": "CSS って何だ？", "source": <<EOS
-%p HTML は文書構造のみ、CSS で見た目を設定。というのが今の流れ。
-%p
-  利点は作業の分離、メディアによって表示方法を変更可能
-  HTML構造がシンプルになるとか？・・・調べる
+%p 最近の流れってこんな感じ
+%dl
+  %dt HTML
+  %dd 文書構造
+  %dt CSS
+  %dd 見た目
+%p 作業の分離、HTML構造がシンプルになるとかのメリット
+%p 時間不足でした・・・詳しくはぐぐって下さい
 EOS
 },
 { "title": "CSS の基本", "source": <<EOS
-%p CSS セレクタで指定した要素に見た目を設定する
-%p TODO セレクタ、属性、代表的なセレクタ、属性
+%p セレクタで指定した要素に見た目を設定する
+%dl
+  %dt ID
+  %dd 'id名' で指定、文書内で一意になる
+  %dt クラス
+  %dd '.class名' で指定、複数の要素に指定可能
+  %dt 要素
+  %dd '要素名' で指定する。ex.) div とか
+%p さらにこれらを複数組み合わせて指定が可能。
+%p 詳しくはぐぐってください。
 EOS
 },
 
@@ -73,12 +91,6 @@ EOS
   %li height
   %li 縦方向の margin
   %li 縦方向の padding
-.example
-  li { display: inline-block; list-style-type: none;}
-  %ul
-    %li.inlineblock HOME
-    %li.inlineblock BLOG
-    %li.inlineblock LINK
 %blockquote
   %p
     %a{href:'http://h2ham.seesaa.net/article/116990578.html', target:'_blank'}
@@ -149,7 +161,7 @@ EOS
     %dt relative
     %dd 相対配置。static の場合基準位置からの位置を指定
     %dt absolute
-    %dd 絶対配置。親ボックスが static の場合、ウインドウの左上からの位置で指定。static 以外では親ボックスの最初の子要素の開始位置で指定
+    %dd 絶対配置。基準となるボックスがの左上からの位置で指定。基準は static 以外の親要素。なければウィンドウ
 .example
   親ボックス - position: static
   %div{style:'position: relative; top: 30px; padding-bottom: 4em;'}
