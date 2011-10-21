@@ -1,0 +1,8 @@
+{
+	"name": "html-and-css-20111021",
+	"version": "1.0.0",
+	"dependencies": {
+		"express": "2.4.3",
+		"hamljs": "0.5.1"
+	}
+}
