@@ -45,4 +45,4 @@ new function(sourcePath, port){
     });
     app.listen(port);
     console.log("server start listening on port " + port);
-}('./src/source.json', 4000);
+}('./src/source.json', process.env.PORT || 4000);
