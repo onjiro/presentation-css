@@ -3,7 +3,8 @@
 %h2 HTML と CSS の話
 #sub-title
   .date 2011.10.21
-  .author 第２システム部 永沼 智比呂
+  .author
+    %a{href:'http://twitter.com/#!/onjiro_mohyahya'} @onjiro_mohyahya
 EOS
 },
 
@@ -36,7 +37,12 @@ EOS
   %dt CSS
   %dd 見た目
 %p 作業の分離、HTML構造がシンプルになるとかのメリット
-%p 時間不足でした・・・詳しくはぐぐって下さい
+%p ↓とか見たらどうでしょう？
+%blockquote
+  %p
+    %a{href: 'http://adp.daa.jp/web.html', target: '_blank'}
+      ADP: ウェブデザイン／CSS
+      %span.sitename Alternative Design Blog
 EOS
 },
 { "title": "CSS の基本", "source": <<EOS
@@ -198,5 +204,14 @@ EOS
   %li position 属性
 %p あとは擬似セレクタも使えるとかなり色々できるヨ！
 EOS
+},
+{ "title": "おまけ", "source": <<EOS
+.github
+  %p 当資料は github でソースコード公開してます。
+  %blockquote
+    %p
+      %a{href: 'https://github.com/onjiro/presentation-css', target: '_blank'} https://github.com/onjiro/presentation-css
+EOS
 }
+
 ]
