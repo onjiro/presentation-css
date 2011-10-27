@@ -6,34 +6,20 @@
     %title HTML & CSS の話 - 2011.10.21
     %link{"rel":"stylesheet", "href":"css/all.css"}
     %script{"charset":"utf-8", "src":"js/jquery.js"}
+    %script{"charset":"utf-8", "src":"js/jquery.ba-hashchange.js"}
   %body!= pages
     :javascript
       $(function() {
         var switchTo = function(defaultUrl) {
+          var lastUrl;
           return function(url) {
             $(url || defaultUrl).css('display', 'block');
             $('.page').not(url || defaultUrl).css('display', 'none');
+            lastUrl = url;
           };
         }('#0');
-        $('a.next').each(function(i) {
-          $(this).bind('click', function(){
-            var that = this;
-            $('body').css('marginRight', '0').animate({marginLeft: -$('body').width() * 2}, 200, function() {
-              switchTo($(that).attr('href'));
-              $('body').css('marginLeft', '0');
-              $('body').css('marginRight', -$('body').width() * 2).animate({marginRight: '0px'}, 200);
-            });
-          });
+        $(window).hashchange(function() {
+          switchTo(location.hash);
         });
-        $('a.previous').each(function(i) {
-          $(this).bind('click', function(){
-            var that = this;
-            $('body').css('marginLeft', '0').animate({marginRight: -$('body').width() * 2}, 200, function() {
-              switchTo($(that).attr('href'));
-              $('body').css('marginRight', '0');
-              $('body').css('marginLeft', -$('body').width() * 2).animate({marginLeft: '0px'}, 200);
-            });
-          });
-        });
-        switchTo($(location).attr('hash'));
+        $(window).hashchange();      
       });
