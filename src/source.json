@@ -205,6 +205,18 @@ EOS
 %p あとは擬似セレクタも使えるとかなり色々できるヨ！
 EOS
 },
+{ "title": "この先へ！", "source": <<EOS
+%h2 他人の技を教わる、盗む
+%p 一歩先を目指すには・・・
+%ul
+  %li テクニックについて説明したサイト、ブログを探す
+  %li
+    %a{'href':'https://addons.mozilla.org/ja/firefox/addon/firebug/'}
+      Firebug
+    , GoogleChrome の機能でソースを覗いていじる
+%p ある程度基本的な所を覚えればあとはやる気次第！
+EOS
+},
 { "title": "おまけ", "source": <<EOS
 .github
   %p 当資料は github でソースコード公開してます。
