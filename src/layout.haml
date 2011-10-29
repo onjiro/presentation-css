@@ -7,19 +7,66 @@
     %link{"rel":"stylesheet", "href":"css/all.css"}
     %script{"charset":"utf-8", "src":"js/jquery.js"}
     %script{"charset":"utf-8", "src":"js/jquery.ba-hashchange.js"}
-  %body!= pages
+  %body
+    #wrapper!= pages
     :javascript
       $(function() {
-        var switchTo = function(defaultUrl) {
-          var lastUrl;
-          return function(url) {
-            $(url || defaultUrl).css('display', 'block');
-            $('.page').not(url || defaultUrl).css('display', 'none');
-            lastUrl = url;
+        var switchPage = function(defaultUrl) {
+          return function(from, to) {
+            var pages = $(".page");
+            if (from) {
+              // 表示範囲の調整
+              var altWidth = $("body").width();
+              $("#wrapper").css({
+                marginLeft: -altWidth * pages.index($(from)),
+                width: altWidth,
+              });
+              $(".navigation").css("display", "none")
+              // ページの配置を変更
+              var pageSize = $(pages[0]).width();
+              var cnt = 0;
+              pages.each(function() {
+                $(this).css({
+                  display: "block",
+                  position: "absolute",
+                  marginLeft: -$(this).width() / 2,
+                  left: 50 + cnt * 100 + "%",
+                });
+                cnt++;
+              });
+              $("#wrapper").animate(
+                {
+                  marginLeft: -altWidth * pages.index($(to))
+                },
+                {
+                  duration: 150 * (1 + Math.abs(pages.index($(from)) - pages.index($(to)))/ 3),
+                  complete: function() {
+                    // 変更したページの配置をもとに戻す
+                    pages.css({
+                      position: "relative",
+                      marginLeft: "auto",
+                      left: 0,
+                    });
+                    pages.not(to || defaultUrl).css("display", "none");
+                    $("#wrapper").css({
+                      marginLeft: "auto",
+                      width: altWidth,
+                    });
+                    $(".navigation").css("display", "block")
+                  }
+                }
+              );
+            } else {
+              pages.not(to || defaultUrl).css("display", "none");
+            };
+            $("#wrapper").css("marginTop", ($(window).height() - $($(".page")[0]).height()) / 2);
           };
-        }('#0');
+        }("#0");
+        
+        var lastUrl;
         $(window).hashchange(function() {
-          switchTo(location.hash);
+          switchPage(lastUrl, location.hash);
+          lastUrl = location.hash || "#0";
         });
-        $(window).hashchange();      
+        $(window).hashchange();
       });
