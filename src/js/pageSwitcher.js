@@ -10,7 +10,6 @@ var createPageSwitcher = function(defaultUrl) {
             });
             $(".navigation").css("display", "none")
             // ページの配置を変更
-            var pageSize = $(pages[0]).width();
             var cnt = 0;
             pages.each(function() {
                 $(this).css({
@@ -21,6 +20,7 @@ var createPageSwitcher = function(defaultUrl) {
                 });
                 cnt++;
             });
+
             $("#wrapper").animate(
                 {
                     marginLeft: -altWidth * pages.index($(to))
@@ -48,4 +48,4 @@ var createPageSwitcher = function(defaultUrl) {
         };
         $("#wrapper").css("marginTop", ($(window).height() - $($(".page")[0]).height()) / 2);
     };
-}
+};
